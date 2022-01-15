@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stock Information</title>
+</head>
+<body>
+  <main>
+    <p>For each set of information added (with attributes name, stock amount, weight), a unique ID is created. In order to delete or amend information, this ID needs to be referenced. This could be done by clicking "List" which provides the ID tag for each entry. This design choice was made for scalability, and it was inspired by the Git log and Git Checkout functionality.  </p>
+    <p>INSTRUCTIONS: Right Click to "Inspect Element" and click on "Console" to see the output of each of the functions of this program. </p>
+    <form>
+        <button id="listBtn">List of All Stocks</button>
+        <button id="highestbtn">Current Highest Stock</button>
+
+        <hr>
+
+        <label for="stock_name">Stock Name</label><br>
+        <input type="text" name="stock_name" id="stock_name"><br>
+
+        <label for="amount">Stock Amount</label><br>
+        <input type="text" name="amount" id="amount"><br>
+        <label for="weight">Weight Per Unit</label><br>
+        <input type="text" name="weight" id="weight"><br>  
+
+        <button id="addBtn">Add</button>
+ 
+        <hr>
+
+        <label for="up_ID">Stock ID</label><br>
+        <input type="text" name="up_ID" id="up_ID"><br>
+
+        <label for="up_stock_name">Stock Name</label><br>
+        <input type="text" name="up_stock_name" id="up_stock_name"><br>
+
+        <label for="up_amount">Stock Amount</label><br>
+        <input type="text" name="up_amount" id="up_amount"><br>
+
+        <label for="up_weight">Weight Per Unit</label><br>
+        <input type="text" name="up_weight" id="up_weight"><br>  
+
+        <button id="updateBtn">Update</button>
+
+        <hr>
+
+        <label for="rm_ID">Stock ID</label><br>
+        <input type="text" name="rm_ID" id="rm_ID"><br>
+        <button id="removeBtn">Remove</button>
+        
+        
+    </form>
+  </main>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyA27pwd5gc24d_YXkZL9jb1eNN11RPtapQ",
+      authDomain: "tracker-c5daa.firebaseapp.com",
+      databaseURL: "https://tracker-c5daa-default-rtdb.firebaseio.com",
+      projectId: "tracker-c5daa",
+      storageBucket: "tracker-c5daa.appspot.com",
+      messagingSenderId: "967672785723",
+      appId: "1:967672785723:web:f335d2f81c957ba031a51e",
+      measurementId: "G-9834T97XDG"
+    };
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="./functions.js"></script>
+</body>
+</html>  
